@@ -1,0 +1,30 @@
+{
+  "name": "ytsclone-backend",
+  "version": "0.0.0",
+  "description": "A YTS clone made with MERN",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1337encrypted/YTS_Clone_Back_End.git"
+  },
+  "keywords": [
+    "yts",
+    "yts-clone",
+    "clone",
+    "torrent",
+    "movies",
+    "streaming",
+    "films",
+    "shows"
+  ],
+  "author": "AdvWebTeam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1337encrypted/YTS_Clone_Back_End/issues"
+  },
+  "homepage": "https://github.com/1337encrypted/YTS_Clone_Back_End#readme"
+}

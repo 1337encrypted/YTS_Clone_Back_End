@@ -1,0 +1,13 @@
+# Node files/dirs
+package-lock.json
+node_modules
+
+# Environment vars
+.env
+*.env
+
+# Macos files
+.DS_Store
+
+# Secure configuration files
+src/configs/*.secure.json
