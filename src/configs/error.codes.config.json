@@ -1,0 +1,16 @@
+{
+    "ERR_LIM": "ERR_LIM: Value `limit` must be in range [1, 50).",
+    "ERR_PG": "ERR_PG: Value `page` must be greater than ZERO.",
+    "ERR_QLT": "ERR_QLT: Option `quality` must be a valid sequence of - \"720p\", \"1080p\", \"2160p\", and/or \"3D\".",
+    "ERR_MINR": "ERR_MINR: Value `minimum_rating` must be in range [1, 10)",
+    "ERR_GNR": "ERR_GNR: Option `genre` must be a valid sequence of - \"comedy\", \"sci-fi\", \"horror\", \"romance\", \"action\", \"thriller\", \"drama\", \"mystery\", \"crime\", \"animation\", \"adventure\", \"fantasy\", \"comedy-romance\", \"action-comedy\", and/or \"superhero\".",
+    "ERR_SBY": "ERR_SBY: Option `sort_by` must be a valid value of - \"title\", \"year\", \"rating\", \"peers\", \"seeds\", \"download_count\", \"like_count\", or \"date_added\".",
+    "ERR_OBY": "ERR_OBY: Option `order_by` must be a valid value of - \"asc\", or \"desc\".",
+    "ERR_RTR": "ERR_RTR: Boolean option `with_rt_ratings` must be a valid boolean value.",
+    "ERR_APIF": "ERR_APIF: Api call failed.",
+    "ERR_NOID": "ERR_NOID: Movie/Imdb id required.",
+    "ERR_INVID": "ERR_INVID: Movie/Imdb id must be a valid integer.",
+    "ERR_WIE": "ERR_WIE: Boolean option `with_images` must be a valid boolean value.",
+    "ERR_WCE": "ERR_WCE: Boolean option `with_cast` must be a valid boolean value.",
+    "ERR_INTE": "ERR_INTE: Internal exception."
+}
