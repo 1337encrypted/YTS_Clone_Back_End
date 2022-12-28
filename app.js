@@ -1,2 +1,5 @@
 // Imports
-const expressApp = require("./src/utils/express.util");
+const { expressApp, httpApp } = require("./src/utils/express.util");
+
+// Yts Routes
+expressApp.use(require("./src/routes/yts.route"));

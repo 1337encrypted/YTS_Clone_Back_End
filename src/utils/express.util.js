@@ -3,18 +3,23 @@ require("dotenv").config();
 
 // Imports
 const express = require("express");
+const http = require("http");
 const cors = require("cors");
 
 // Constants
-const app = express();
+const expressApp = express();
+const httpApp = http.createServer(expressApp);
 const { PORT } = process.env;
 
 // Body
-app.use(express.json());
-app.use(cors());
+expressApp.use(express.json());
+expressApp.use(cors());
 
-app.listen(PORT, () =>
+httpApp.listen(PORT, () =>
     console.log("[express.util] Express server running on port", PORT)
 );
 
-module.exports = app;
+module.exports = {
+    expressApp,
+    httpApp,
+};
