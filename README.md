@@ -13,3 +13,7 @@ After cloning the repository:
 2. Open a shell instance in the project directory and run `npm i` (which produces the same effect as of `npm install`).
 
 3. Finally, run the `npm start` command to execute the application.
+
+## API Docs
+
+Please refer to the [docs/routes/README.md](./docs/routes/README.md) for official API documentation.
