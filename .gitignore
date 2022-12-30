@@ -11,3 +11,6 @@ node_modules
 
 # Secure configuration files
 src/configs/*.secure.json
+
+# MongoDB playgrounds
+*.mongodb
