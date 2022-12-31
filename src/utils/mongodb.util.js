@@ -17,9 +17,9 @@ mongoose
         useNewUrlParser: true,
         useUnifiedTopology: true,
     })
-    .then(() =>
-        console.log("[mongodb.script.js] MongoDB connection successful")
-    )
+    .then(() => console.log("[mongodb.script.js] MongoDB connection successful"))
     .catch(error => {
         console.error(error);
     });
+
+module.exports = mongoose;

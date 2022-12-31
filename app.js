@@ -1,5 +1,5 @@
-// Setup (Scripts)
-require("./src/scripts/mongodb.script");
+// Connect to MongoDB
+const mongoose = require("./src/utils/mongodb.util");
 
 // Imports
 const { expressApp, httpApp } = require("./src/utils/express.util");
