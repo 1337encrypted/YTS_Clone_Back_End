@@ -15,9 +15,7 @@ const { PORT } = process.env;
 expressApp.use(express.json());
 expressApp.use(cors());
 
-httpApp.listen(PORT, () =>
-    console.log("[express.util] Express server running on port", PORT)
-);
+httpApp.listen(PORT, () => console.log("[express.util] Express server running on port", PORT));
 
 module.exports = {
     expressApp,

@@ -11,8 +11,7 @@ async function ytsApiGetController(req, res, next) {
         const url = req.ytsUrl;
         const response = await fetch(url);
 
-        if (response.status !== 200)
-            return res.status(500).send(Response(errors.ERR_APIF));
+        if (response.status !== 200) return res.status(500).send(Response(errors.ERR_APIF));
 
         if (!res.body) res.body = {};
         res.body.apiResponse = await response.json();

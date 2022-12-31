@@ -9,44 +9,23 @@ async function ytsListMoviesApiMiddleware(req, res, next) {
         const queries = req.query;
 
         // `limit`
-        if ("limit" in queries && !/^\d+$/.test(queries.limit))
-            return res.status(400).send(Response(errors.ERR_LIM));
+        if ("limit" in queries && !/^\d+$/.test(queries.limit)) return res.status(400).send(Response(errors.ERR_LIM));
         const limit = "limit" in queries ? parseInt(queries.limit, 10) : 20;
-        if (limit < 1 || limit > 50)
-            return res.status(400).send(Response(errors.ERR_LIM));
+        if (limit < 1 || limit > 50) return res.status(400).send(Response(errors.ERR_LIM));
 
         // `page`
-        if ("page" in queries && !/^\d+$/.test(queries.page))
-            return res.status(400).send(Response(errors.ERR_PG));
+        if ("page" in queries && !/^\d+$/.test(queries.page)) return res.status(400).send(Response(errors.ERR_PG));
         const page = "page" in queries ? parseInt(queries.page, 10) : 1;
         if (page < 1) return res.status(400).send(Response(errors.ERR_PG));
 
         // `quality`
-        if (
-            "quality" in queries &&
-            (!/^(720p|1080p|2160p|3D)(,(720p|1080p|2160p|3D))*$/.test(
-                queries.quality
-            ) ||
-                !/^(?!.*(720p|1080p|2160p|3D).*\1.*).+$/.test(queries.quality))
-        )
-            return res.status(400).send(Response(errors.ERR_QLT));
-        const quality =
-            "quality" in queries
-                ? queries.quality.split(",").filter(_quality => !!_quality)
-                : undefined;
+        if ("quality" in queries && (!/^(720p|1080p|2160p|3D)(,(720p|1080p|2160p|3D))*$/.test(queries.quality) || !/^(?!.*(720p|1080p|2160p|3D).*\1.*).+$/.test(queries.quality))) return res.status(400).send(Response(errors.ERR_QLT));
+        const quality = "quality" in queries ? queries.quality.split(",").filter(_quality => !!_quality) : undefined;
 
         // `minimum_rating`
-        if (
-            "minimum_rating" in queries &&
-            !/^\d+$/.test(queries.minimum_rating)
-        )
-            return res.status(400).send(Response(errors.ERR_MINR));
-        const minimumRating =
-            "minimum_rating" in queries
-                ? parseInt(queries.minimum_rating, 10)
-                : 0;
-        if (minimumRating < 0 || minimumRating > 9)
-            return res.status(400).send(Response(errors.ERR_MINR));
+        if ("minimum_rating" in queries && !/^\d+$/.test(queries.minimum_rating)) return res.status(400).send(Response(errors.ERR_MINR));
+        const minimumRating = "minimum_rating" in queries ? parseInt(queries.minimum_rating, 10) : 0;
+        if (minimumRating < 0 || minimumRating > 9) return res.status(400).send(Response(errors.ERR_MINR));
 
         // `query_term`
         const queryTerm = queries.query_term;
@@ -57,39 +36,22 @@ async function ytsListMoviesApiMiddleware(req, res, next) {
             (!/^(comedy|sci-fi|horror|romance|action|thriller|drama|mystery|crime|animation|adventure|fantasy|comedy-romance|action-comedy|superhero)(,(comedy|sci-fi|horror|romance|action|thriller|drama|mystery|crime|animation|adventure|fantasy|comedy-romance|action-comedy|superherocomedy|sci-fi|horror|romance|action|thriller|drama|mystery|crime|animation|adventure|fantasy|comedy-romance|action-comedy|superhero))*$/.test(
                 queries.genre
             ) ||
-                !/^(?!.*(comedy|sci-fi|horror|romance|action|thriller|drama|mystery|crime|animation|adventure|fantasy|comedy-romance|action-comedy|superhero).*\1.*).+$/.test(
-                    queries.genre
-                ))
+                !/^(?!.*(comedy|sci-fi|horror|romance|action|thriller|drama|mystery|crime|animation|adventure|fantasy|comedy-romance|action-comedy|superhero).*\1.*).+$/.test(queries.genre))
         )
             return res.status(400).send(Response(errors.ERR_GNR));
-        const genre =
-            "genre" in queries
-                ? queries.genre.split(",").filter(category => !!category)
-                : undefined;
+        const genre = "genre" in queries ? queries.genre.split(",").filter(category => !!category) : undefined;
 
         // `sort_by`
-        if (
-            "sort_by" in queries &&
-            !/^(title|year|rating|peers|seeds|download_count|like_count|date_added)$/.test(
-                queries.sort_by
-            )
-        )
-            return res.status(400).send(Response(errors.ERR_SBY));
+        if ("sort_by" in queries && !/^(title|year|rating|peers|seeds|download_count|like_count|date_added)$/.test(queries.sort_by)) return res.status(400).send(Response(errors.ERR_SBY));
         const sortBy = "sort_by" in queries ? queries.sort_by : undefined;
 
         // `order_by`
-        if ("order_by" in queries && !/^(asc|desc)$/.test(queries.order_by))
-            return res.status(400).send(Response(errors.ERR_OBY));
+        if ("order_by" in queries && !/^(asc|desc)$/.test(queries.order_by)) return res.status(400).send(Response(errors.ERR_OBY));
         const orderBy = "order_by" in queries ? queries.order_by : undefined;
 
         // `with_rt_ratings`
-        if (
-            "with_rt_ratings" in queries &&
-            !/^(false|true)$/.test(queries.with_rt_ratings)
-        )
-            return res.status(400).send(Response(errors.ERR_RTR));
-        const withRtRatings =
-            "with_rt_ratings" in queries ? queries.with_rt_ratings : undefined;
+        if ("with_rt_ratings" in queries && !/^(false|true)$/.test(queries.with_rt_ratings)) return res.status(400).send(Response(errors.ERR_RTR));
+        const withRtRatings = "with_rt_ratings" in queries ? queries.with_rt_ratings : undefined;
 
         const params = [
             `limit=${limit}`,
@@ -118,40 +80,20 @@ async function ytsMovieDetailsApiMiddleware(req, res, next) {
         const queries = req.query;
 
         // `movie_id`/`imdb_id`
-        if (!("movie_id" in queries) && !("imdb_id" in queries))
-            return res.status(400).send(Response(errors.ERR_NOID));
-        if (
-            ("movie_id" in queries && !/^\d+$/.test(queries.movie_id)) ||
-            ("imdb_id" in queries && !/^\d+$/.test(queries.imdb_id))
-        )
-            return res.status(400).send(Response(errors.ERR_INVID));
+        if (!("movie_id" in queries) && !("imdb_id" in queries)) return res.status(400).send(Response(errors.ERR_NOID));
+        if (("movie_id" in queries && !/^\d+$/.test(queries.movie_id)) || ("imdb_id" in queries && !/^\d+$/.test(queries.imdb_id))) return res.status(400).send(Response(errors.ERR_INVID));
         const idType = "movie_id" in queries ? "movie_id" : "imdb_id";
-        const id =
-            idType === "movie_id"
-                ? parseInt(queries.movie_id, 10)
-                : parseInt(queries.imdb_id, 10);
+        const id = idType === "movie_id" ? parseInt(queries.movie_id, 10) : parseInt(queries.imdb_id, 10);
 
         // `with_images`
-        if (
-            "with_images" in queries &&
-            !/^(false|true)$/.test(queries.with_images)
-        )
-            return res.status(500).send(Response(errors.ERR_WIE));
-        const withImages =
-            "with_images" in queries ? queries.with_images : undefined;
+        if ("with_images" in queries && !/^(false|true)$/.test(queries.with_images)) return res.status(500).send(Response(errors.ERR_WIE));
+        const withImages = "with_images" in queries ? queries.with_images : undefined;
 
         // `with_cast`
-        if ("with_cast" in queries && !/^(false|true)$/.test(queries.with_cast))
-            return res.status(500).send(Response(errors.ERR_WCE));
+        if ("with_cast" in queries && !/^(false|true)$/.test(queries.with_cast)) return res.status(500).send(Response(errors.ERR_WCE));
         const withCast = "with_cast" in queries ? queries.with_cast : undefined;
 
-        const params = [
-            `${idType}=${id}`,
-            withImages ? `with_images=${withImages}` : null,
-            withCast ? `with_cast=${withCast}` : null,
-        ]
-            .filter(param => !!param)
-            .join("&");
+        const params = [`${idType}=${id}`, withImages ? `with_images=${withImages}` : null, withCast ? `with_cast=${withCast}` : null].filter(param => !!param).join("&");
         req.ytsUrl = `${yts["yts.host"]}/api/v2/movie_details.json?${params}`;
 
         return next();

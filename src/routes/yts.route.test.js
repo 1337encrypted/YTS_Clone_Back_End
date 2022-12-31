@@ -10,18 +10,11 @@ const { PORT } = process.env;
 const HOST = `http://localhost:${PORT}`;
 const listMoviesTestPayload = [
     {
-        urls: [
-            `${HOST}/list_movies?limit=sometext`,
-            `${HOST}/list_movies?limit=0`,
-            `${HOST}/list_movies?limit=69`,
-        ],
+        urls: [`${HOST}/list_movies?limit=sometext`, `${HOST}/list_movies?limit=0`, `${HOST}/list_movies?limit=69`],
         errcode: "ERR_LIM",
     },
     {
-        urls: [
-            `${HOST}/list_movies?page=sometext`,
-            `${HOST}/list_movies?page=0`,
-        ],
+        urls: [`${HOST}/list_movies?page=sometext`, `${HOST}/list_movies?page=0`],
         errcode: "ERR_PG",
     },
     {
@@ -29,11 +22,7 @@ const listMoviesTestPayload = [
         errcode: "ERR_QLT",
     },
     {
-        urls: [
-            `${HOST}/list_movies?minimum_rating=sometext`,
-            `${HOST}/list_movies?minimum_rating=-1`,
-            `${HOST}/list_movies?minimum_rating=69`,
-        ],
+        urls: [`${HOST}/list_movies?minimum_rating=sometext`, `${HOST}/list_movies?minimum_rating=-1`, `${HOST}/list_movies?minimum_rating=69`],
         errcode: "ERR_MINR",
     },
     {
@@ -59,26 +48,15 @@ const movieDetailsTestPayload = [
         errcode: "ERR_NOID",
     },
     {
-        urls: [
-            `${HOST}/movie_details?movie_id=`,
-            `${HOST}/movie_details?imdb_id=`,
-            `${HOST}/movie_details?movie_id=sometext`,
-            `${HOST}/movie_details?imdb_id=sometext`,
-        ],
+        urls: [`${HOST}/movie_details?movie_id=`, `${HOST}/movie_details?imdb_id=`, `${HOST}/movie_details?movie_id=sometext`, `${HOST}/movie_details?imdb_id=sometext`],
         errcode: "ERR_INVID",
     },
     {
-        urls: [
-            `${HOST}/movie_details?movie_id=10&with_images=`,
-            `${HOST}/movie_details?movie_id=10&with_images=sometext`,
-        ],
+        urls: [`${HOST}/movie_details?movie_id=10&with_images=`, `${HOST}/movie_details?movie_id=10&with_images=sometext`],
         errcode: "ERR_WIE",
     },
     {
-        urls: [
-            `${HOST}/movie_details?movie_id=10&with_cast=`,
-            `${HOST}/movie_details?movie_id=10&with_cast=sometext`,
-        ],
+        urls: [`${HOST}/movie_details?movie_id=10&with_cast=`, `${HOST}/movie_details?movie_id=10&with_cast=sometext`],
         errcode: "ERR_WCE",
     },
 ];
