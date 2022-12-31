@@ -1,0 +1,8 @@
+{
+    "accessToken": {
+        "expiresAfter": 86400
+    },
+    "refreshToken": {
+        "expiresAfter": 86400
+    }
+}
