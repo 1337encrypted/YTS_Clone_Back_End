@@ -32,11 +32,6 @@ const schema = new Schema({
 });
 
 // Body
-schema.methods.isEmailVerified = function () {
-    // eslint-disable-next-line no-underscore-dangle
-    return this._information.emailVerified;
-};
-
 schema.statics.findByUsername = async function (username) {
     return this.findOne({ username }).exec();
 };

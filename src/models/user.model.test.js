@@ -36,14 +36,6 @@ test("Schema methods", async () => {
     });
     expect(user).toBeDefined();
 
-    // `isEmailVerified`
-    expect(user.isEmailVerified()).toBe(false);
-
-    // eslint-disable-next-line no-underscore-dangle
-    user._information.emailVerified = true;
-    await user.save();
-    expect(user.isEmailVerified()).toBe(true);
-
     // Deletion
     await user.remove();
 });
