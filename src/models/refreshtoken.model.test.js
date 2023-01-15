@@ -1,4 +1,5 @@
 // Imports
+const { v4: uuidv4 } = require("uuid");
 const mongoose = require("../utils/mongodb.util");
 const RefreshToken = require("./refreshtoken.model");
 
@@ -8,6 +9,7 @@ test("CRUD operations", async () => {
     // Creation
     let id = new mongoose.Types.ObjectId("12byteslong!");
     const rt = await RefreshToken.create({
+        identifier: uuidv4(),
         user: id,
     });
     expect(rt).toBeDefined();
@@ -30,6 +32,7 @@ test("Schema methods", async () => {
     // Creation
     const id = new mongoose.Types.ObjectId();
     const rt = await RefreshToken.create({
+        identifier: uuidv4(),
         user: id,
     });
     expect(rt).toBeDefined();

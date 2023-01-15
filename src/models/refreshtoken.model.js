@@ -5,6 +5,11 @@ const config = require("../configs/refreshtokenmodel.config.json");
 // Constants
 const { Schema } = mongoose;
 const schema = new Schema({
+    identifier: {
+        type: String,
+        required: true,
+        unique: true,
+    },
     expireAfter: {
         type: Date,
         default: () => Date.now() + config.refreshToken.expiresAfter * 1000,
