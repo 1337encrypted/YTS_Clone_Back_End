@@ -20,6 +20,6 @@ Here you can find a curated list of APIs that are available for testing and depl
 
 ### Table of Contents
 
--   [YTS](/docs/routes/yts.route.docs.md)
+-   [YTS `/yts`](/docs/routes/yts.route.docs.md)
     -   [`GET /list_movies`](/docs/routes/yts.route.docs.md#list-movies)
     -   [`GET /movie_details`](/docs/routes/yts.route.docs.md#movie-details)

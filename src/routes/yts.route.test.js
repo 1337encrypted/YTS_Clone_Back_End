@@ -7,7 +7,7 @@ const { expressApp, httpApp } = require("../utils/express.util");
 
 // Constants
 const { PORT } = process.env;
-const HOST = `http://localhost:${PORT}`;
+const HOST = `http://localhost:${PORT}/yts`;
 const listMoviesTestPayload = [
     {
         urls: [`${HOST}/list_movies?limit=sometext`, `${HOST}/list_movies?limit=0`, `${HOST}/list_movies?limit=69`],

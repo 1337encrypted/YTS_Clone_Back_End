@@ -1,8 +1,8 @@
-# YTS Route API Docs
+# YTS Route API Docs (`/yts`)
 
 <a name="list-movies"></a>
 
-## `/list_movies`
+## `/yts/list_movies`
 
 Use this API to query all movies.
 
@@ -110,7 +110,7 @@ Use this API to query all movies.
 
 <a name="movie-details"></a>
 
-## `/movie_details`
+## `/yts/movie_details`
 
 Use this API to query movie details of a single movie.
 
