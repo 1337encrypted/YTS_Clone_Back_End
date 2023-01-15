@@ -20,21 +20,14 @@ const schema = new Schema({
         type: String,
         trim: true,
         max: 256,
+        validate: RegExp(config["name.regex"]),
     },
     email: {
         type: String,
         required: true,
         unique: true,
         lowercase: true,
-        validate:
-            // eslint-disable-next-line no-useless-escape
-            /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.?)+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/,
-    },
-    _information: {
-        emailVerified: {
-            type: Boolean,
-            default: false,
-        },
+        validate: RegExp(config["email.regex"]),
     },
 });
 
