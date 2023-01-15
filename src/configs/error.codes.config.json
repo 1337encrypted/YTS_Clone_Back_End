@@ -12,5 +12,16 @@
     "ERR_INVID": "ERR_INVID: Movie/Imdb id must be a valid integer.",
     "ERR_WIE": "ERR_WIE: Boolean option `with_images` must be a valid boolean value.",
     "ERR_WCE": "ERR_WCE: Boolean option `with_cast` must be a valid boolean value.",
+    "ERR_NOE": "ERR_NOE: Email address required.",
+    "ERR_INVE": "ERR_INVE: Value `email` must be a valid email address.",
+    "ERR_EUSE": "ERR_EUSE: Email address is already in use.",
+    "ERR_NOP": "ERR_NOP: Password required.",
+    "ERR_INVP": "ERR_INVP: Value `password` must be a valid password in the range 6-16 characters.",
+    "ERR_PMM": "ERR_PMM: Password mismatch.",
+    "ERR_INVN": "ERR_INVN: Value `name` must be a valid name of possibly alphanumeric, whitespaces, and periods only.",
+    "ERR_UNF": "ERR_UNF: User does not exist.",
+    "ERR_UNC": "ERR_UNC: Unauthorized client access denied.",
+    "ERR_INVAT": "ERR_INVAT: Access token is invalid.",
+    "ERR_EXPAT": "ERR_EXPAT: Expired access token supplied.",
     "ERR_INTE": "ERR_INTE: Internal exception."
 }
