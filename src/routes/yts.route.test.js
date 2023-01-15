@@ -62,7 +62,7 @@ const movieDetailsTestPayload = [
 ];
 
 // Consume Routes and Listen
-expressApp.use(require("./yts.route"));
+expressApp.use("/yts", require("./yts.route"));
 
 afterAll(() => httpApp.close());
 
