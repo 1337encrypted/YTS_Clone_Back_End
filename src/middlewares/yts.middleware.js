@@ -4,7 +4,7 @@ const errors = require("../configs/error.codes.config.json");
 const yts = require("../configs/yts.config.json");
 
 // Body
-async function ytsListMoviesApiMiddleware(req, res, next) {
+async function ytsListMoviesInputValidationMiddleware(req, res, next) {
     try {
         const queries = req.query;
 
@@ -75,7 +75,7 @@ async function ytsListMoviesApiMiddleware(req, res, next) {
     }
 }
 
-async function ytsMovieDetailsApiMiddleware(req, res, next) {
+async function ytsMovieDetailsInputValidationMiddleware(req, res, next) {
     try {
         const queries = req.query;
 
@@ -104,6 +104,6 @@ async function ytsMovieDetailsApiMiddleware(req, res, next) {
 }
 
 module.exports = {
-    ytsListMoviesApiMiddleware,
-    ytsMovieDetailsApiMiddleware,
+    ytsListMoviesInputValidationMiddleware,
+    ytsMovieDetailsInputValidationMiddleware,
 };
