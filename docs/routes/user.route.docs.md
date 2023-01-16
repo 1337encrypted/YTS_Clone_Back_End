@@ -121,7 +121,7 @@ Use this API to refresh a User's access token.
     "profile": {
         "_id": "string",
         "username": "string",
-        "name": "string",
+        "name": "string|null",
         "email": "string",
         "__v": "integer"
     },
