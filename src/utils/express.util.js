@@ -1,6 +1,3 @@
-// Setup
-require("dotenv").config();
-
 // Imports
 const express = require("express");
 const http = require("http");

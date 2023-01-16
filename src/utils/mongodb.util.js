@@ -1,7 +1,4 @@
-// Setup
-require("dotenv").config();
-
-// Import
+// Imports
 const mongoose = require("mongoose");
 
 // Constants

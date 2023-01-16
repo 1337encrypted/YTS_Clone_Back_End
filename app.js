@@ -1,3 +1,6 @@
+// Setup
+require("dotenv").config();
+
 // Connect to MongoDB
 const mongoose = require("./src/utils/mongodb.util");
 
