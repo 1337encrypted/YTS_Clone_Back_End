@@ -88,6 +88,7 @@ async function userAuthValidationMiddleware(req, res, next) {
 
         if (!res.body) res.body = {};
         res.body.profile = await User.findById(user, "-pass");
+        res.body.sessionTimeoutAfter = rt.expireAfter.getTime();
 
         return next();
     } catch (error) {
