@@ -77,8 +77,7 @@ async function userAuthValidationMiddleware(req, res, next) {
         const { identifier, user } = decoded;
         const rt = await RefreshToken.findOne({ identifier });
         if (!rt) return res.status(403).send(Response(errors.ERR_INVAT));
-        // eslint-disable-next-line eqeqeq
-        if (rt.user != user) return res.status(403).send(Response(errors.ERR_INVAT));
+        if (String(rt.user) !== user) return res.status(403).send(Response(errors.ERR_INVAT));
 
         req.user = await User.findById(user);
         if (!req.user) return res.status(404).send(Response(errors.ERR_UNF));
