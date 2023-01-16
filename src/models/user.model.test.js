@@ -1,3 +1,6 @@
+// Setup
+require("dotenv").config();
+
 // Imports
 const mongoose = require("../utils/mongodb.util");
 const User = require("./user.model");

@@ -1,3 +1,6 @@
+// Setup
+require("dotenv").config();
+
 // Imports
 const { v4: uuidv4 } = require("uuid");
 const mongoose = require("../utils/mongodb.util");
