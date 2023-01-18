@@ -75,19 +75,19 @@ async function userAuthValidationMiddleware(req, res, next) {
         }
 
         const { identifier, user } = decoded;
-        const rt = await RefreshToken.findOne({ identifier });
-        if (!rt) return res.status(403).send(Response(errors.ERR_INVAT));
-        if (String(rt.user) !== user) return res.status(403).send(Response(errors.ERR_INVAT));
+        req.rt = await RefreshToken.findOne({ identifier });
+        if (!req.rt) return res.status(403).send(Response(errors.ERR_INVAT));
+        if (String(req.rt.user) !== user) return res.status(403).send(Response(errors.ERR_INVAT));
 
         req.user = await User.findById(user);
         if (!req.user) return res.status(404).send(Response(errors.ERR_UNF));
 
-        if (rt.isExpired()) return res.status(403).send(Response(errors.ERR_EXPAT));
-        await rt.prolongToken();
+        if (req.rt.isExpired()) return res.status(403).send(Response(errors.ERR_EXPAT));
+        await req.rt.prolongToken();
 
         if (!res.body) res.body = {};
         res.body.profile = await User.findById(user, "-pass");
-        res.body.sessionTimeoutAfter = rt.expireAfter.getTime();
+        res.body.sessionTimeoutAfter = req.rt.expireAfter.getTime();
 
         return next();
     } catch (error) {
