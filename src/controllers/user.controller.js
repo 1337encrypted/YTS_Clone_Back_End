@@ -75,7 +75,7 @@ async function userRegisterController(req, res, next) {
 
 async function userLogoutController(req, res, next) {
     try {
-        await RefreshToken.remove({ identifier: req.rt.identifier });
+        await RefreshToken.deleteOne({ identifier: req.rt.identifier });
 
         return next();
     } catch (error) {
