@@ -94,7 +94,7 @@ expressApp.use("/user", require("./user.route"));
 afterAll(() => httpApp.close());
 
 // Tests
-test("Validates body parameters for `/login` endpoint", async () => {
+test("Validates body parameters for `/auth` endpoint", async () => {
     // eslint-disable-next-line no-restricted-syntax, node/no-unsupported-features/es-syntax
     for await (const testPayload of loginTestPayload) {
         const response = await fetch(`${HOST}/auth`, {
