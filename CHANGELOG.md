@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.3](https://github.com/1337encrypted/YTS_Clone_Back_End/compare/v0.0.2...v0.0.3) (2023-01-18)
+
+
+### Features
+
+* logout route ([41e5676](https://github.com/1337encrypted/YTS_Clone_Back_End/commit/41e5676b7240456e0c27620c3e605c44841b7282))
+
+
+### Bug Fixes
+
+* broken api response ([4c8c77c](https://github.com/1337encrypted/YTS_Clone_Back_End/commit/4c8c77c44f7ededbba4a49441bb0b7aae814fac6))
+* deprecated function ([4ee67ff](https://github.com/1337encrypted/YTS_Clone_Back_End/commit/4ee67ff21595b070868be3362a99b0f8ec9bafe2))
+* no env vars ([3d0ba7d](https://github.com/1337encrypted/YTS_Clone_Back_End/commit/3d0ba7d1ea397ef54024ac68cafd0b3a712b3514))
+* obsolete code ([51ef125](https://github.com/1337encrypted/YTS_Clone_Back_End/commit/51ef125d7b66c42872a3e026d6902689e98896c8))
+
 ### [0.0.2](https://github.com/1337encrypted/YTS_Clone_Back_End/compare/v0.0.1...v0.0.2) (2023-01-15)
 
 
