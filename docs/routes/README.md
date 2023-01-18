@@ -27,3 +27,4 @@ Here you can find a curated list of APIs that are available for testing and depl
     -   [POST **`/auth`**](/docs/routes/user.route.docs.md#login)
     -   [POST **`/register`**](/docs/routes/user.route.docs.md#register)
     -   [GET **`/auth`**](/docs/routes/user.route.docs.md#auth)
+    -   [DELETE **`/auth`**](/docs/routes/user.route.docs.md#logout)

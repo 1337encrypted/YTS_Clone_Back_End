@@ -148,3 +148,52 @@ Use this API to refresh a User's access token.
 - `ERR_UNF`
 - `ERR_EXPAT`
 - `ERR_INTE`
+
+---
+
+<a name="logout"></a>
+
+## `/user/auth`
+
+Use this API to delete a User's access token (or to simulate a User's logout).
+
+**Method**: `DELETE`
+
+**Headers**:
+
+```json
+{
+    "Authorization": "Bearer ..."
+}
+```
+
+| Fields | Type | Required | Notes |
+|--------|------|----------|-------|
+| Authorization | String | Yes | A valid and unexpired access token |
+
+### **Success Response** (`application/json`)
+
+```json
+{
+    "success": true,
+    "error": false,
+    "data": {
+        "profile": {
+            "_id": "string",
+            "username": "string",
+            "name": "string|null",
+            "email": "string",
+            "__v": "integer"
+        },
+        "sessionTimeoutAfter": "long"
+    }
+}
+```
+
+### [**Error codes**](/src/configs/error.codes.config.json)
+
+- `ERR_UNC`
+- `ERR_INVAT`
+- `ERR_UNF`
+- `ERR_EXPAT`
+- `ERR_INTE`
