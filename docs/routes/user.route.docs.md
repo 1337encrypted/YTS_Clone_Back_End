@@ -26,7 +26,11 @@ Use this API to login to a User's account.
 
 ```json
 {
-    "access_token": "string"
+    "success": true,
+    "error": false,
+    "data": {
+        "access_token": "string"
+    }
 }
 ```
 
@@ -72,12 +76,16 @@ Use this API to register a new account.
 
 ```json
 {
-    "profile": {
-        "_id": "string",
-        "username": "string",
-        "name": "string|null",
-        "email": "string",
-        "__v": "integer"
+    "success": true,
+    "error": false,
+    "data": {
+        "profile": {
+            "_id": "string",
+            "username": "string",
+            "name": "string|null",
+            "email": "string",
+            "__v": "integer"
+        }
     }
 }
 ```
@@ -118,14 +126,18 @@ Use this API to refresh a User's access token.
 
 ```json
 {
-    "profile": {
-        "_id": "string",
-        "username": "string",
-        "name": "string|null",
-        "email": "string",
-        "__v": "integer"
-    },
-    "sessionTimeoutAfter": "long"
+    "success": true,
+    "error": false,
+    "data": {
+        "profile": {
+            "_id": "string",
+            "username": "string",
+            "name": "string|null",
+            "email": "string",
+            "__v": "integer"
+        },
+        "sessionTimeoutAfter": "long"
+    }
 }
 ```
 
