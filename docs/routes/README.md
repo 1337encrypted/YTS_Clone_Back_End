@@ -5,7 +5,7 @@
 ```json
 {
     "success": "boolean",
-    "error": "string|null",
+    "error": "string|false",
     "data": "object"
 }
 ```
