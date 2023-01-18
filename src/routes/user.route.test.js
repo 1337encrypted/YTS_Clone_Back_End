@@ -97,7 +97,7 @@ afterAll(() => httpApp.close());
 test("Validates body parameters for `/login` endpoint", async () => {
     // eslint-disable-next-line no-restricted-syntax, node/no-unsupported-features/es-syntax
     for await (const testPayload of loginTestPayload) {
-        const response = await fetch(`${HOST}/login`, {
+        const response = await fetch(`${HOST}/auth`, {
             method: "post",
             body: JSON.stringify(testPayload.body),
             headers: {

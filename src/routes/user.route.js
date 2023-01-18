@@ -5,8 +5,8 @@ const { userLoginInputValidationMiddleware, userRegisterInputValidationMiddlewar
 const { userLoginController, userRegisterController } = require("../controllers/user.controller");
 
 // Body
-Router.post("/login", userLoginInputValidationMiddleware, userLoginController, completeRequest);
 Router.post("/register", userRegisterInputValidationMiddleware, userRegisterController, completeRequest);
+Router.post("/auth", userLoginInputValidationMiddleware, userLoginController, completeRequest);
 Router.get("/auth", userAuthValidationMiddleware, completeRequest);
 
 module.exports = Router;

@@ -2,7 +2,7 @@
 
 <a name="login"></a>
 
-## `/user/login`
+## `/user/auth`
 
 Use this API to login to a User's account.
 

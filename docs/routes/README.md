@@ -24,6 +24,6 @@ Here you can find a curated list of APIs that are available for testing and depl
     -   [GET **`/list_movies`**](/docs/routes/yts.route.docs.md#list-movies)
     -   [GET **`/movie_details`**](/docs/routes/yts.route.docs.md#movie-details)
 -   [User **`/user`**](/docs/routes/user.route.docs.md)
-    -   [POST **`/login`**](/docs/routes/user.route.docs.md#login)
+    -   [POST **`/auth`**](/docs/routes/user.route.docs.md#login)
     -   [POST **`/register`**](/docs/routes/user.route.docs.md#register)
     -   [GET **`/auth`**](/docs/routes/user.route.docs.md#auth)
