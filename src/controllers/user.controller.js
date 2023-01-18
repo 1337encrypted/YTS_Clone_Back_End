@@ -73,7 +73,19 @@ async function userRegisterController(req, res, next) {
     }
 }
 
+async function userLogoutController(req, res, next) {
+    try {
+        await RefreshToken.remove({ identifier: req.rt.identifier });
+
+        return next();
+    } catch (error) {
+        console.error("[user.controller]", error);
+        return res.status(500).send(Response(errors.ERR_INTE));
+    }
+}
+
 module.exports = {
     userLoginController,
     userRegisterController,
+    userLogoutController,
 };
